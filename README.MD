@@ -87,3 +87,13 @@ Sub objects add a great deal of flexibility. You can create a compound type of c
 When dealing with even moderately long lists of returned data, it is unlikely that the user viewing individual items, will be viewing more than a small selection of those at a time. To view more of the list the user would normal scroll, click on a "next button" or something similar.
 
 We can implement this on the GraphQL side by adding a couple of arguments in to the type definition - skip and take, for example. The first time the user visits the list, skip will be set to 0 and take to 10 (again, for example). As the user moves through the page, using whatever UI navigation methods are provided, we can update the content with skip = 10 and take = 10. Skip merely sets the starting point, and take the number of items to be rendered/viewed at a particular moment in time.
+
+Thinking about this from a GraphQL intent point of view, pagination delivers only what the client/user wants to consume at a particular point in time. No over-fetching or under-fetching, just exactly the right data required to present what has been requested.
+
+## 7. Always use Object references instead of ID fields
+
+### Branch: [7-use-object-references-instead-of-id-fields](https://github.com/StuLast/demo-graphql-gql-design/tree/7-use-object-references-instead-of-id-fields)
+
+Foreign keys usually serve no purpose to the client. A data object should only present the data that the client/user want to consume. In the case of foriegn table data, it is best to define that as a separate object, then embed that object in the type you're returning.
+
+In the case of this project. The Group type does not care about the images ID. It serves no purpose. The image itself is what the Group type is after so by providing a compound objet instead of an ID, we can avoid additional requests to the database, and just pull off the data that has been requested, the actual url to the image.
