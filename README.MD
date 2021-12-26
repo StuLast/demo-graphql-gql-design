@@ -133,3 +133,13 @@ When mutating records, always consider if it is useful to update multiple elemen
 ### Branch: [13-prefix-mutation-names-with-object-for-alphabetical-grouping](https://github.com/StuLast/demo-graphql-gql-design/tree/13-prefix-mutation-names-with-object-for-alphabetical-grouping)
 
 This might be pretty obvious for anyone who likes to keep their code organised and make maintenance easier. Prefixing the mutation name with the object keeps the mutations organised, and will provide for better client programming experience (look in the Sandbox!).
+
+## 14. Prefix Mutation Names with Object for Alphabetical Grouping
+
+### Branch: [14-structure-mutation-inputs-to-reduce-duplication](https://github.com/StuLast/demo-graphql-gql-design/tree/14-structure-mutation-inputs-to-reduce-duplication)
+
+Working towards DRY, reducing input by defining input types is considered good practice, even if it results in nullable relaxation. Validation of inputs and good API documentation can make up for the nullable relaxation.
+
+## 15. Prefix Mutation Names with Object for Alphabetical Grouping
+
+### Branch: [15-provide-user-/-business-level-errors](https://github.com/StuLast/demo-graphql-gql-design/tree/15-provide-user-/-business-level-errors)
