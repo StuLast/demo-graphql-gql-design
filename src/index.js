@@ -14,7 +14,7 @@ typeDefs = gql`
   type Group {
     id: ID1
     featureSet: GroupFeatureSet
-    cars:[Car!]!
+    cars(skip: Int!, take: Int!):[Car!]!
     name: String!
     imageId: ID!
     bodyHTML: String!
