@@ -79,4 +79,11 @@ Remember - Breaking changes can often cause visible failures of the API and clie
 ### Branch: [5-group-closely-related-fields-together-in-sub-object](https://github.com/StuLast/demo-graphql-gql-design/tree/5-group-closely-related-fields-together-in-sub-object)
 
 Sub objects add a great deal of flexibility. You can create a compound type of closely related features, in this case the feature set, and then apply nullable rules to the compound type, and separately to the types within the compound type. This add a degree of flexibility to how we build our API structure.
-s
+
+## 6. Always check if a list should be paginated
+
+### Branch: [6-check-if-list-should-be-paginated](https://github.com/StuLast/demo-graphql-gql-design/tree/6-check-if-list-should-be-paginated)
+
+When dealing with even moderately long lists of returned data, it is unlikely that the user viewing individual items, will be viewing more than a small selection of those at a time. To view more of the list the user would normal scroll, click on a "next button" or something similar.
+
+We can implement this on the GraphQL side by adding a couple of arguments in to the type definition - skip and take, for example. The first time the user visits the list, skip will be set to 0 and take to 10 (again, for example). As the user moves through the page, using whatever UI navigation methods are provided, we can update the content with skip = 10 and take = 10. Skip merely sets the starting point, and take the number of items to be rendered/viewed at a particular moment in time.
