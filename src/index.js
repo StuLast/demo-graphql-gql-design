@@ -11,6 +11,8 @@ typeDefs = gql`
     updateGroup
     publishGroup
     unpublishGroup
+    addCars
+    removeCars
   }
 
   type Car {
