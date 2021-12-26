@@ -61,3 +61,15 @@ Thinking about what data we are showing to the user/client, they again don't car
 In the case of this example, we have 2 types for groups. The user doesn't care about that , they just want to be able to use a group list to search for products within that group.
 
 So to put this in terms of the rule, the business domain contains a facility for users to search by a group. The implementaiton of that is more complex, but is of no concern to the user. Keeping in mind that GraphQL is an API used to access data for the business purpose makes this easier to think about.
+
+## 4. It's Easier to add fields than remove them
+
+### Branch: (4-easier-to-add-fields-than-remove-them)[https://github.com/StuLast/demo-graphql-gql-design/tree/4-easier-to-add-fields-than-remove-them]
+
+If we remove a field from the API, we risk introducing breaking changes. In other words if a client that is consuming the API asks for a field that isn't there, an error will occur, often causing difficulties for the client's users.
+
+On the other hand, if we add a field that the client isn't asking for yet, no harm is done, and the field can be added down the line when the client is updated.
+
+This is why we should adopt the approach of only including what we need to include to meet the specific purpose of the API a that point in time, or to meet specific needs defined in a development plan. It's very much a case of less is more.
+
+Remember - Breaking changes can often cause visible failures of the API and client software.
