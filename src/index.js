@@ -30,8 +30,16 @@ typeDefs = gql`
     applyFeaturesSeperately: Boolean!
   }
 
-  type GroupFeatures {
-    feature: String!
+  enum GroupFeatureField {
+    INCLINE_ENGINE
+    FOUR_CYLINDER_ENGINE
+    TWIN_CYLINDER_ENGINE
+    RED_PAINT
+    BLACK_PAINT
+  }
+
+  type GroupFeature {
+    feature: GroupFeatureField!
   }
 `;
 

@@ -102,4 +102,10 @@ In the case of this project. The Group type does not care about the images ID. I
 
 ### Branch: [8-choose-field-names-that-make-sense](https://github.com/StuLast/demo-graphql-gql-design/tree/8-choose-field-names-that-make-sense)
 
-Remember that the GraphQL API we're developing is in place to provide data for a client to consume. Naming needs to make sense to the client, and does not necessarily need to reflect what we're calling things in the database, or the implementation of data fetching/resolvers. This is another form of data hiding in a similar vein to building a code interface. Use names that make sense for the consumption of the API, not necessarily for the implementation of it.
+Remember that the GraphQL API we're developing is in place to provide data for a client to consume. Naming needs to make sense to the client, and does not necessarily need to reflect what we're calling things in the database, or the implementation of data fetching/resolvers. This is another form of data hiding in a similar vein to building a code interface. Use names that make sense for the consumption of the API, not necessarily for the implementation of it. Always keep the client in mind when using names that will be made visible to the client.
+
+## 9.Use Enums for fields that can only take certain values
+
+### Branch: [9-use-enums](https://github.com/StuLast/demo-graphql-gql-design/tree/9-use-enums)
+
+As with all programming, enums are a useful way to ensure only the correct spelling/casing of limited options is used. Enums are very useful for highlighting coding errors.
