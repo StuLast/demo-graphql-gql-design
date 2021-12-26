@@ -11,20 +11,14 @@ typeDefs = gql`
     make: String!
   }
 
-  type ManualGroup {
+  type Group {
     id: ID!
     imageId: String!
     car:[Car!]!
+    GroupFeatures: [AutomaticGroupFeatures!
   }
 
-  type AutomaticGroup {
-    id: ID!
-    imageId: String!
-    car:[Car!]!
-    automaticGroupFeatures: [AutomaticGroupFeatures!]!
-  }
-
-  type AutomaticGroupFeatures {
+  type GroupFeatures {
     id: ID!
   }
 `;
