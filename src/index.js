@@ -17,7 +17,7 @@ typeDefs = gql`
     cars(skip: Int!, take: Int!):[Car!]!
     name: String!
     image: image!
-    bodyHTML: String!
+    description: String!
   }
 
   type image {

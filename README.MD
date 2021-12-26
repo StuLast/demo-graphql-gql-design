@@ -97,3 +97,9 @@ Thinking about this from a GraphQL intent point of view, pagination delivers onl
 Foreign keys usually serve no purpose to the client. A data object should only present the data that the client/user want to consume. In the case of foriegn table data, it is best to define that as a separate object, then embed that object in the type you're returning.
 
 In the case of this project. The Group type does not care about the images ID. It serves no purpose. The image itself is what the Group type is after so by providing a compound objet instead of an ID, we can avoid additional requests to the database, and just pull off the data that has been requested, the actual url to the image.
+
+## 8. Choose field names that make sense
+
+### Branch: [8-choose-field-names-that-make-sense](https://github.com/StuLast/demo-graphql-gql-design/tree/8-choose-field-names-that-make-sense)
+
+Remember that the GraphQL API we're developing is in place to provide data for a client to consume. Naming needs to make sense to the client, and does not necessarily need to reflect what we're calling things in the database, or the implementation of data fetching/resolvers. This is another form of data hiding in a similar vein to building a code interface. Use names that make sense for the consumption of the API, not necessarily for the implementation of it.
