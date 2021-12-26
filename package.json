@@ -2,7 +2,7 @@
   "name": "pt2-rules-of-gql-design",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT",
+  "license": "ISC",
   "author": {
     "name": "Stu Last"
   },
