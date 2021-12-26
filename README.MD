@@ -38,8 +38,16 @@ The naive implementation simply creates typedefs that reflect an SQL table struc
 
 ## 1 - Start with a High Level View of the Objects and Their Relationships.
 
+### Branch [1_high_level_view](https://github.com/StuLast/demo-graphql-gql-design/tree/1_high_level_view)
+
 The aim here is to define the relationships between the types. Only releationships are defined, but as a matter of keeping the code working, I also implement and ID field and give a title to each part of the type definition.
 
 The point is that the detail of each type is, at a high level, pretty much irrelevant. It's the interaction between the types that is key here.
 
-### Branch [1_high_level_view]()
+## 2 - Never Expose Implementation Details
+
+### Branch: (2_Hide_Implementation)[https://github.com/StuLast/demo-graphql-gql-design/tree/2_Hide_Implementation]
+
+GraphQL's purpose is to provide an API tool for client software to get data. How that data is structured in the database, or how the relationships are managed are not relevant, and will serve no purpose to the client. The only data that needs to be provided, is the data the client needs to consume or the data the API wishes to furnish.
+
+This being the case, mapping tables that provide many-to-many relationship mapping serve no purpose to the client and should not be included in the schema definition. The only places this information is useful are in the resolvers, in order to construct a data response, and in the database itself, to provide detail of relationships.
