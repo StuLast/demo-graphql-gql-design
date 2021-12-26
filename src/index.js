@@ -12,14 +12,18 @@ typeDefs = gql`
   }
 
   type Group {
-    id: ID!
-    imageId: String!
-    car:[Car!]!
-    GroupFeatures: [AutomaticGroupFeatures!
+    id: ID1
+    features: [GroupFeatures!]! 
+    applyFeaturesSeperately: Boolean!
+    cars:[Car!]!
+    name: String!
+    imageId: ID!
+    bodyHTML: String!
   }
 
   type GroupFeatures {
     id: ID!
+    feature: String!
   }
 `;
 
