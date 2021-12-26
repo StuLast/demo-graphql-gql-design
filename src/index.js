@@ -13,27 +13,23 @@ typeDefs = gql`
 
   type ManualGroup {
     id: ID!
-    name: String!
     imageId: String!
-    bodyHTML: String
     memberShips: [GroupMembership!]!
   }
 
   type AutomaticGroup {
     id: ID!
-    name: String!
     imageId: String!
-    bodyHTML: String!
     memberShips: [GroupMembership!]!
-    feature: [AutomaticGroupFeatures!]!
-    applyFeaturesSeperately: Boolean!
+    automaticGroupFeatures: [AutomaticGroupFeatures!]!
   }
 
   type AutomaticGroupFeatures {
-    column: String!
+    id: ID!
   }
 
   type GroupMembership {
+    id: ID!
     groupId: ID!
     carId: ID!
   }
