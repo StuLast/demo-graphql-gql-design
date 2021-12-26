@@ -109,3 +109,9 @@ Remember that the GraphQL API we're developing is in place to provide data for a
 ### Branch: [9-use-enums](https://github.com/StuLast/demo-graphql-gql-design/tree/9-use-enums)
 
 As with all programming, enums are a useful way to ensure only the correct spelling/casing of limited options is used. Enums are very useful for highlighting coding errors.
+
+## 9.API should provide business logic
+
+### Branch: [10-api-should-provide-business-logic](https://github.com/StuLast/demo-graphql-gql-design/tree/10-api-should-provide-business-logic)
+
+The API should be the central source of data AND business logic. The client's role is to present the data. The API's role is to provide data in the format required based on the request and any related arguments. In the case of this particular project, adding a field to the group to return whether the group contains a certain car or not centralises the business logic in the API, rather than have the client have to implement it numerous times.
