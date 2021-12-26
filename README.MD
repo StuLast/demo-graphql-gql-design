@@ -26,10 +26,16 @@ or
 
 The code in this project is covered by the ISC license. Anyone can download the code from public repo. The code has been split up into branches to reflect the rules (as shown below), with the 'main' branch being the complete implementation up to the current point in time.
 
-## 0 - Project Scaffold
-
-### Branch: 0_scaffold
+## Setup
 
 A simple setup of the project. I use a nodemon.json file to configure how nodemon should behave, and, at the same time, keep the scripts in the package.json file relatively clean. This also allows me to keep global installs of npm packages to a minimum, a best practice in the Node world. Essentially, this keeps all the dependencies required by the project within the project, and stops collaborators and/or consumers of the code from having to hunt down global dependencies. Finally, it allows fine grained control of versioning of ALL dependencies and tools for the project.
 
+## 0 - Naive Implementation
+
+### Branch: [0_naive_implementation](https://github.com/StuLast/demo-graphql-gql-design/tree/0_naive_implementation)
+
+The naive implementation simply creates typedefs that reflect an SQL table structure.x
+
 ## 1 - Start with a High Level View of the Objects and Their Relationships
+
+### Branch [1_high_level_view]()
