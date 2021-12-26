@@ -6,25 +6,30 @@ typeDefs = gql`
   }
 
   type Mutation {
-    groupAddCars: (groupId: ID!, carId: ID!)Boolean
-    groupCreate (
-      groupInput: GroupInput!
-    ): Boolean
-    groupDelete (groupId: ID!): Boolean
-    groupPublish (groupId: ID!): Boolean4
-    groupRemoveCars (groupId: ID!, carId: ID!): Boolean
-    groupUnpublish (groupId: ID!): Boolean
-    groupUpdate (
-      groupId: ID!,
-      groupInput: groupInput!
-    )
+    groupAddCars(groupId: ID!, carId: ID!): GroupTransactionPayload!
+    groupCreate(groupInput: GroupInput!): GroupTransactionPayload!
+    groupDelete(groupId: ID!): GroupTransactionPayload!
+    groupPublish(groupId: ID!): GroupTransactionPayload!
+    groupRemoveCars(groupId: ID!, carId: ID!): GroupTransactionPayload!
+    groupUnpublish(groupId: ID!): GroupTransactionPayload!
+    groupUpdate(groupId: ID!, groupInput: GroupInput!): GroupTransactionPayload!
   }
 
-  input groupInput {
-    name: String, 
-    image: ImageInput,
-    description: String,
-    featureSet: GroupFeatureFields,
+  type GroupTransactionPayload {
+    group: Group
+    errors: [Errors]!
+  }
+
+  type Errors {
+    message: String!
+    field: [String!]!
+  }
+
+  input GroupInput {
+    name: String
+    image: ImageInput
+    description: String
+    featureSet: GroupFeatureField
   }
 
   type Car {
@@ -37,19 +42,23 @@ typeDefs = gql`
     id: ID!
     featureSet: GroupFeatureSet
     hasCar(id: ID!): Boolean!
-    cars(skip: Int!, take: Int!):[Car!]!
+    cars(skip: Int!, take: Int!): [Car!]!
     name: String!
-    image: image!
+    image: Image!
     description: String!
   }
 
-  type image {
+  type Image {
     id: ID!
     url: String!
   }
 
+  input ImageInput {
+    url: String!
+  }
+
   type GroupFeatureSet {
-    features: [GroupFeatureField!]! 
+    features: [GroupFeatureField!]!
     applyFeaturesSeperately: Boolean!
   }
 
