@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require("apollo-server");
+const { ApolloServer, gql } = require('apollo-server');
 
 typeDefs = gql`
   type Query {
@@ -8,22 +8,24 @@ typeDefs = gql`
   type Mutation {
     groupAddCars: (groupId: ID!, carId: ID!)Boolean
     groupCreate (
-      name: String!
-      image: ImageInput!
-      description: String!
-      featureSet: GroupFeatureFields
+      groupInput: GroupInput!
     ): Boolean
     groupDelete (groupId: ID!): Boolean
-    groupPublish (groupId: ID!): Boolean
+    groupPublish (groupId: ID!): Boolean4
     groupRemoveCars (groupId: ID!, carId: ID!): Boolean
     groupUnpublish (groupId: ID!): Boolean
-    groupUpdate (groupId: ID!): Boolean
+    groupUpdate (
+      groupId: ID!,
+      groupInput: groupInput!
+    )
   }
 
-  input ImageInput {
-    url: String!
+  input groupInput {
+    name: String, 
+    image: ImageInput,
+    description: String,
+    featureSet: GroupFeatureFields,
   }
-
 
   type Car {
     id: ID!
@@ -68,7 +70,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers: {
     Query: {
-      cars: () => [{ id: 1, color: "blue", make: "Toyota" }],
+      cars: () => [{ id: 1, color: 'blue', make: 'Toyota' }],
     },
   },
 });
