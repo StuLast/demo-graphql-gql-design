@@ -121,3 +121,9 @@ The API should be the central source of data AND business logic. The client's ro
 ### Branch: [11-separate-mutations-for-separate-logical-actions](https://github.com/StuLast/demo-graphql-gql-design/tree/11-separate-mutations-for-separate-logical-actions)
 
 Think about how the client will be interacting with the UI, updating a resource is a separate logical step from publishing a group or adding/removing cars from a group. So, in order to keep the API obvious to use, we split up mutations into separate logical actions on a resource. Once again, the API is providing an interface for the client to use, not presenting them with business logic to figure out.
+
+## 12. For Relationship Mutations Consider Operating on Multiple Elements
+
+### Branch: [12-relationship-operations-operate-on-multiple-elements](https://github.com/StuLast/demo-graphql-gql-design/tree/12-relationship-operations-operate-on-multiple-elements)
+
+When mutating records, always consider if it is useful to update multiple elements. For example in this demo, there could be addCar, addCars, removeCar, removeCars, but the plural of each (addCars, removeCars) can be used on the singular as well, obviating the need for the singular mutation of each. So instead of having 4 mutations (2 for plural, 2 for singular), 2 mutations will suffice (2 for plural)
