@@ -126,4 +126,10 @@ Think about how the client will be interacting with the UI, updating a resource 
 
 ### Branch: [12-relationship-operations-operate-on-multiple-elements](https://github.com/StuLast/demo-graphql-gql-design/tree/12-relationship-operations-operate-on-multiple-elements)
 
-When mutating records, always consider if it is useful to update multiple elements. For example in this demo, there could be addCar, addCars, removeCar, removeCars, but the plural of each (addCars, removeCars) can be used on the singular as well, obviating the need for the singular mutation of each. So instead of having 4 mutations (2 for plural, 2 for singular), 2 mutations will suffice (2 for plural)
+When mutating records, always consider if it is useful to update multiple elements. For example in this demo, there could be addCar, addCars, removeCar, removeCars, but the plural of each (addCars, removeCars) can be used on the singular as well, obviating the need for the singular mutation of each. So instead of having 4 mutations (2 for plural, 2 for singular), 2 mutations will suffice (2 for plural).
+
+## 13. Prefix Mutation Names with Object for Alphabetical Grouping
+
+### Branch: [13-prefix-mutation-names-with-object-for-alphabetical-grouping](https://github.com/StuLast/demo-graphql-gql-design/tree/13-prefix-mutation-names-with-object-for-alphabetical-grouping)
+
+This might be pretty obvious for anyone who likes to keep their code organised and make maintenance easier. Prefixing the mutation name with the object keeps the mutations organised, and will provide for better client programming experience (look in the Sandbox!).
