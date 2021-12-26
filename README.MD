@@ -4,7 +4,9 @@ This repo is a demo of the implementation of GraphQL Rules of Design, as propose
 
 ## Purpose:
 
-This project looks into the design aspects of GraphQL and not specifically at the implementation of resolvers to serve the data. However, once all the design rules have been implemented I will seek to implement some gql resolvers to provide a working example. To view the GQL sandbox, use `yarn dev` or `npm run dev` to spin up a local server, which should spin up on localhost:4000 (or another port as shown in the console if 4000 is not avaiable).
+This project looks into the design aspects of GraphQL and not specifically at the implementation of resolvers to serve the data. You cna see the actions in the sandbox, but none will work as no resolvers have been implemented. This is purely an exercise in GraphQL design.
+
+To view the GQL sandbox, use `yarn dev` or `npm run dev` to spin up a local server, which should spin up on localhost:4000 (or another port as shown in the console if 4000 is not avaiable).
 
 ## Pre-requisites:
 
