@@ -34,8 +34,12 @@ A simple setup of the project. I use a nodemon.json file to configure how nodemo
 
 ### Branch: [0_naive_implementation](https://github.com/StuLast/demo-graphql-gql-design/tree/0_naive_implementation)
 
-The naive implementation simply creates typedefs that reflect an SQL table structure.x
+The naive implementation simply creates typedefs that reflect an SQL table structure.
 
-## 1 - Start with a High Level View of the Objects and Their Relationships
+## 1 - Start with a High Level View of the Objects and Their Relationships.
+
+The aim here is to define the relationships between the types. Only releationships are defined, but as a matter of keeping the code working, I also implement and ID field and give a title to each part of the type definition.
+
+The point is that the detail of each type is, at a high level, pretty much irrelevant. It's the interaction between the types that is key here.
 
 ### Branch [1_high_level_view]()
