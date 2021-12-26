@@ -51,3 +51,13 @@ The point is that the detail of each type is, at a high level, pretty much irrel
 GraphQL's purpose is to provide an API tool for client software to get data. How that data is structured in the database, or how the relationships are managed are not relevant, and will serve no purpose to the client. The only data that needs to be provided, is the data the client needs to consume or the data the API wishes to furnish.
 
 This being the case, mapping tables that provide many-to-many relationship mapping serve no purpose to the client and should not be included in the schema definition. The only places this information is useful are in the resolvers, in order to construct a data response, and in the database itself, to provide detail of relationships.
+
+## 3 - Design API around business domain
+
+### Branch (2-design-api-around-business-domain)[https://github.com/StuLast/demo-graphql-gql-design/tree/3-design-api-around-business-domain]
+
+Thinking about what data we are showing to the user/client, they again don't care about how the data/code is implemented, only that it is presented to them in a manner that allows them to achieve what they're trying to do.
+
+In the case of this example, we have 2 types for groups. The user doesn't care about that , they just want to be able to use a group list to search for products within that group.
+
+So to put this in terms of the rule, the business domain contains a facility for users to search by a group. The implementaiton of that is more complex, but is of no concern to the user. Keeping in mind that GraphQL is an API used to access data for the business purpose makes this easier to think about.
