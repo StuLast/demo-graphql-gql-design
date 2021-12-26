@@ -6,14 +6,24 @@ typeDefs = gql`
   }
 
   type Mutation {
-    createGroup
-    deleteGroup
-    updateGroup
-    publishGroup
-    unpublishGroup
-    addCars
-    removeCars
+    groupAddCars: (groupId: ID!, carId: ID!)Boolean
+    groupCreate (
+      name: String!
+      image: ImageInput!
+      description: String!
+      featureSet: GroupFeatureFields
+    ): Boolean
+    groupDelete (groupId: ID!): Boolean
+    groupPublish (groupId: ID!): Boolean
+    groupRemoveCars (groupId: ID!, carId: ID!): Boolean
+    groupUnpublish (groupId: ID!): Boolean
+    groupUpdate (groupId: ID!): Boolean
   }
+
+  input ImageInput {
+    url: String!
+  }
+
 
   type Car {
     id: ID!
@@ -22,9 +32,9 @@ typeDefs = gql`
   }
 
   type Group {
-    id: ID1
+    id: ID!
     featureSet: GroupFeatureSet
-    hasCar(id: ID!): Boolean!d
+    hasCar(id: ID!): Boolean!
     cars(skip: Int!, take: Int!):[Car!]!
     name: String!
     image: image!
@@ -37,7 +47,7 @@ typeDefs = gql`
   }
 
   type GroupFeatureSet {
-    features: [GroupFeatures!]! 
+    features: [GroupFeatureField!]! 
     applyFeaturesSeperately: Boolean!
   }
 
