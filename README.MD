@@ -132,4 +132,4 @@ When mutating records, always consider if it is useful to update multiple elemen
 
 ### Branch: [13-prefix-mutation-names-with-object-for-alphabetical-grouping](https://github.com/StuLast/demo-graphql-gql-design/tree/13-prefix-mutation-names-with-object-for-alphabetical-grouping)
 
-This might be pretty obvious for anyone who likes to keep their code organised and make maintenance easier. Prefixing the mutation name with the object keeps the mutations organised, and will provide for better client experience (look in the Sandbox!).
+This might be pretty obvious for anyone who likes to keep their code organised and make maintenance easier. Prefixing the mutation name with the object keeps the mutations organised, and will provide for better client programming experience (look in the Sandbox!).
